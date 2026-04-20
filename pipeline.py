@@ -52,10 +52,12 @@ Where PRIORITY is one of: CRITICAL, HIGH, or MEDIUM
 Where #channel is the Slack channel the message came from
 Where Sender is the person who posted it
 
-Important: explicitly surface information from channels this person might not normally monitor.
-If two issues from different channels appear related (for example a data pipeline issue and a model accuracy drop), 
-connect them explicitly in the relevant bullet.
-Make each bullet directly actionable for a {role_label}. No intro text, just the bullets."""
+Critical instructions:
+- Always look for connections between messages from different channels and explicitly call them out within the relevant bullet. For example if a supplier delay in #supply-chain affects a part repair in #mech-eng, say so directly in the bullet.
+- If a message from one channel has direct consequences for a person mentioned in another channel, name that person and the consequence explicitly.
+- Never treat messages as isolated — your job is to surface the cross-team dependencies that no individual would have caught on their own.
+- Make each bullet directly actionable for a {role_label}. 
+- No intro text, just the bullets."""
 
     response = client.messages.create(
         model="claude-haiku-4-5-20251001",
